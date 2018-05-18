@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#dessin-chassis {
+			height: 50px;
+			width: 50px;
+			border: 1px solid;
+			transition: all 0.5s;
+			box-sizing: border-box;
+		}
+		#display {
+		    display: grid;
+		    grid-template-columns: 0fr 0fr;
+		}
+		#mesure1 {
+			margin-left: 5px;
+			vertical-align: middle;
+			display: table-cell;
+		}
+		#mesure2{
+		    border-top: 1px solid #9E9E9E;
+		    margin-top: 5px;
+		    text-align:  center;
+		}
+		</style>
+</head>
+<body>
+	<div id="display">
+		<div id="dessin-chassis"></div>
+			<div>
+				<div id="mesure1">cm</div>
+			</div>
+		<div id="mesure2">cm</div>
+
+	</div>
+	<input type="text" id="largeur" placeholder="Largeur">
+	<input type="text" id="hauteur" placeholder="Hauteur">
+	<button onclick="mafonction()">Clique</button>
+<script type="text/javascript">
+	function mafonction(){
+		a = document.getElementById("largeur").value;
+		c = document.getElementById("hauteur").value;
+		b = document.getElementById("dessin-chassis");
+		d = document.getElementById("mesure1");
+		e = document.getElementById("mesure2");
+		if(isNaN(a)){
+			alert("Erreur, insérez un nombre");
+		} else {
+			b.style.width = a+"px";
+			b.style.height = c+"px";
+			d.innerHTML = c+"cm";
+			e.innerHTML = a+"cm";
+		}
+	}
+</script>
+</body>
+</html>
